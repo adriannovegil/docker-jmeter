@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+
+  # JMeter base
+  jmeter-base:
+    build: ./jmeter-base
+    image: jmeter-cluster/jmeter-base
+    container_name: jmeter-base
+    environment:
+      DOCKERIZE_VERSION: "v0.6.1"
+    entrypoint: ["sh", "-c","
+      ./dockerize ./run.sh"]
+    volumes:
+      - agent-vol:/agent
+
+volumes:
+  agent-vol:

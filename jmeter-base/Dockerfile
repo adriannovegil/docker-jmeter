@@ -4,6 +4,18 @@ LABEL jmeter.version="4.0"
 
 # Set JMeter base
 ENV JMETER_BASE /opt/jmeter
+# Set working directory
+WORKDIR $JMETER_BASE
+
+############# Dockerize
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh wait-for-it.sh
+RUN chmod +x wait-for-it.sh
+
+ENV DOCKERIZE_VERSION v0.6.1
+ADD https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-alpine-linux-amd64-${DOCKERIZE_VERSION}.tar.gz dockerize.tar.gz
+RUN tar xzf dockerize.tar.gz
+RUN chmod +x dockerize
+RUN rm dockerize.tar.gz
 
 # Create jmeter directory with tests and results folder and install JMeter
 # If you don't have internet access from the build machine use COPY instead of curl:
@@ -27,9 +39,6 @@ COPY lib/* $JMETER_HOME/lib/
 
 # Copy custom user.properties file for reports dashboard to be generated
 # COPY user.properties $JMETER_HOME/bin/user.properties
-
-# Set working directory
-WORKDIR $JMETER_BASE
 
 COPY scripts/run.sh $JMETER_BASE/run.sh
 
