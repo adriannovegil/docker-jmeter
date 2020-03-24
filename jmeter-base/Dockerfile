@@ -37,6 +37,7 @@ ENV PATH $JMETER_HOME/bin:$PATH
 
 # Additional jars (ex. AMQP driver) can be copied into $JMETER_HOME/lib
 COPY lib/* $JMETER_HOME/lib/
+COPY lib/ext/* $JMETER_HOME/lib/ext/
 
 # Copy custom user.properties file for reports dashboard to be generated
 # COPY user.properties $JMETER_HOME/bin/user.properties

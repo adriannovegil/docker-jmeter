@@ -1,6 +1,38 @@
 version: '3.7'
 services:
 
+  # Metrics
+  # ============================================================================
+  # Prometheus
+  prometheus-server:
+    image: prom/prometheus:v2.9.2
+    container_name: prometheus
+    depends_on:
+      - jmeter-master
+    volumes:
+      - ./prometheus-server/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - jmeter-network
+    ports:
+      - 9090:9090
+
+  # Grafana
+  grafana-server:
+    build: ./grafana-server
+    image: jmeter-cluster/jmeter-grafana-server
+    container_name: inspectit-grafana-server
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=demo
+      - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
+    volumes:
+      - ./grafana-server/provisioning:/usr/share/grafana/custom/
+    depends_on:
+      - prometheus-server
+    networks:
+      - jmeter-network
+    ports:
+      - 3000:3000
+
   # JMeter Slave
   # ============================================================================
   jmeter-slave-0:
@@ -15,6 +47,8 @@ services:
       - agent-vol:/agent
     networks:
       - jmeter-network
+    ports:
+      - 9270:9270
 
   jmeter-slave-1:
     build: ./jmeter-slave
@@ -28,6 +62,8 @@ services:
       - agent-vol:/agent
     networks:
       - jmeter-network
+    ports:
+      - 9271:9270
 
   jmeter-slave-2:
     build: ./jmeter-slave
@@ -41,6 +77,8 @@ services:
       - agent-vol:/agent
     networks:
       - jmeter-network
+    ports:
+      - 9272:9270
 
   # JMeter master
   # ============================================================================
@@ -52,6 +90,8 @@ services:
       - CLIENT_RMI_PORT=60000
       - CLIENT_ENGINE_PORT=4445
       - REMOTE_HOSTS=jmeter-slave-0,jmeter-slave-1,jmeter-slave-2
+      - TEST_DIR=prometheus
+      - TEST_PLAN_FILE_NAME=simple_prometheus_example.jmx
     entrypoint: ["sh", "-c","
       ./dockerize -wait=tcp://jmeter-slave-0:60000 \
                   -wait=tcp://jmeter-slave-1:60000 \
@@ -63,6 +103,8 @@ services:
       - agent-vol:/agent
     networks:
     - jmeter-network
+    ports:
+      - 9273:9270
 
 volumes:
   agent-vol:

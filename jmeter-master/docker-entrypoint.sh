@@ -8,7 +8,7 @@ x=$(($freeMem/10*8))
 n=$(($freeMem/10*2))
 export JVM_ARGS="-Xmn${n}m -Xms${s}m -Xmx${x}m"
 
-export FULL_LOAD_TEST_DIR=/load_tests/${TEST_DIR}
+export FULL_LOAD_TEST_DIR=/load_tests/testplan/${TEST_DIR}
 
 # Validate if exist any test plan
 if [ ! -f "${FULL_LOAD_TEST_DIR}/${TEST_PLAN_FILE_NAME}" ]

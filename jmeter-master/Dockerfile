@@ -22,6 +22,9 @@ EXPOSE $CLIENT_ENGINE_PORT
 # Copy load_tests folder
 COPY load_tests /load_tests
 
+# Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
+ADD jmeter.properties $JMETER_BIN/
+
 # Copy entrypoint script
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
