@@ -1,4 +1,4 @@
-FROM fabric8/java-centos-openjdk8-jdk:1.4
+FROM fabric8/java-centos-openjdk11-jre:1.6
 
 LABEL jmeter.version="5.2.1"
 ENV JMETER_VERSION 5.2.1
@@ -7,6 +7,8 @@ ENV JMETER_VERSION 5.2.1
 ENV JMETER_BASE /opt/jmeter
 # Set working directory
 WORKDIR $JMETER_BASE
+
+USER root
 
 ############# Dockerize
 ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh wait-for-it.sh

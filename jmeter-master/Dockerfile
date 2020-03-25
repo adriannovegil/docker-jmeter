@@ -25,6 +25,9 @@ COPY load_tests /load_tests
 # Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
 ADD jmeter.properties $JMETER_BIN/
 
+# Inject the inspectIT agent
+RUN sed -i 's|-jar|-javaagent:/agent/inspectit-ocelot-agent.jar -jar|g' $JMETER_BIN/jmeter
+
 # Copy entrypoint script
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh

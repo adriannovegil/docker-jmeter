@@ -31,14 +31,6 @@ IP_ADD=$(hostname -i)
 echo "--> slave - Starting the JMeter Engine at this time \"$JMETER_START_TIME\""
 
 # Execute Jmeter
-#$JMETER_BIN/jmeter \
-#    -n  \
-#    -s  \ # Server mode
-#    -Jclient.rmi.localport=${SERVER_RMI_PORT} \
-#    -Jserver.rmi.localport=${CLIENT_RMI_PORT} \
-#    -Jserver.rmi.ssl.disable=true \
-#		-j /logs/slave_${LOG_TIMESTAMP}_${IP_ADD:9:3}.log
-
 $JMETER_BIN/jmeter \
     -n -s \
     -Jclient.rmi.localport=${SERVER_RMI_PORT} \

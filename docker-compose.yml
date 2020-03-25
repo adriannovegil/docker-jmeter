@@ -1,8 +1,47 @@
 version: '3.7'
 services:
 
+  # InspectIT
+  # ============================================================================
+  # Agent
+  agent:
+    build: ./agent
+    image: jmeter-cluster/inspectit-agent
+    container_name: jmeter-cluster-agent
+    volumes:
+      - agent-vol:/agent
+
+  # Config server
+  ocelot-config-server:
+    image: inspectit/inspectit-ocelot-configurationserver:${INSPECTIT_OCELOT_VERSION}
+    container_name: ocelot-config-server
+    environment:
+      - INSPECTIT_CONFIG_SERVER_WORKING_DIRECTORY=/configuration-server
+      - INSPECTIT_CONFIG_SERVER_DEFAULT_USER_PASSWORD=demo
+    volumes:
+      - ./configuration-server:/configuration-server
+    networks:
+      - jmeter-network
+    ports:
+      - 8090:8090
+
   # Metrics
   # ============================================================================
+  # InfluxDB
+  influxdb-server:
+    image: influxdb:1.7.1
+    container_name: inspectit-influxdb-server
+    environment:
+      - INFLUXDB_HTTP_FLUX_ENABLED=true
+      - INFLUXDB_HTTP_LOG_ENABLED=false
+      - INFLUXDB_DATA_QUERY_LOG_ENABLED=false
+    volumes:
+      - ./influxdb-server:/docker-entrypoint-initdb.d
+    networks:
+      - jmeter-network
+    ports:
+      - 8086:8086
+
   # Prometheus
   prometheus-server:
     image: prom/prometheus:v2.9.2
@@ -33,6 +72,17 @@ services:
     ports:
       - 3000:3000
 
+  # Trazing
+  # ============================================================================
+  # Zipkin
+  zipkin-server:
+    image: openzipkin/zipkin
+    container_name: inspectit-zipkin-server
+    networks:
+      - jmeter-network
+    ports:
+      - 9411:9411
+
   # JMeter Slave
   # ============================================================================
   jmeter-slave-0:
@@ -42,6 +92,17 @@ services:
     environment:
       - SERVER_RMI_PORT=7000
       - CLIENT_RMI_PORT=60000
+      - INSPECTIT_SERVICE_NAME=jmeter-slave-0
+      - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
+      - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
+      - INSPECTIT_EXPORTERS_METRICS_INFLUX_URL=http://influxdb-server:8086
+      - INSPECTIT_EXPORTERS_TRACING_ZIPKIN_URL=http://zipkin-server:9411/api/v2/spans
+    entrypoint: ["sh", "-c","
+      ./dockerize -wait=tcp://ocelot-config-server:8090 \
+                  -wait=tcp://influxdb-server:8086 \
+                  -wait=tcp://zipkin-server:9411 \
+                  -timeout=300s -- &&
+      /docker-entrypoint.sh"]
     volumes:
       - ./jmeter-slave/logs:/logs
       - agent-vol:/agent
@@ -57,6 +118,17 @@ services:
     environment:
       - SERVER_RMI_PORT=7000
       - CLIENT_RMI_PORT=60000
+      - INSPECTIT_SERVICE_NAME=jmeter-slave-1
+      - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
+      - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
+      - INSPECTIT_EXPORTERS_METRICS_INFLUX_URL=http://influxdb-server:8086
+      - INSPECTIT_EXPORTERS_TRACING_ZIPKIN_URL=http://zipkin-server:9411/api/v2/spans
+    entrypoint: ["sh", "-c","
+      ./dockerize -wait=tcp://ocelot-config-server:8090 \
+                  -wait=tcp://influxdb-server:8086 \
+                  -wait=tcp://zipkin-server:9411 \
+                  -timeout=300s -- &&
+      /docker-entrypoint.sh"]
     volumes:
       - ./jmeter-slave/logs:/logs
       - agent-vol:/agent
@@ -72,6 +144,17 @@ services:
     environment:
       - SERVER_RMI_PORT=7000
       - CLIENT_RMI_PORT=60000
+      - INSPECTIT_SERVICE_NAME=jmeter-slave-2
+      - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
+      - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
+      - INSPECTIT_EXPORTERS_METRICS_INFLUX_URL=http://influxdb-server:8086
+      - INSPECTIT_EXPORTERS_TRACING_ZIPKIN_URL=http://zipkin-server:9411/api/v2/spans
+    entrypoint: ["sh", "-c","
+      ./dockerize -wait=tcp://ocelot-config-server:8090 \
+                  -wait=tcp://influxdb-server:8086 \
+                  -wait=tcp://zipkin-server:9411 \
+                  -timeout=300s -- &&
+      /docker-entrypoint.sh"]
     volumes:
       - ./jmeter-slave/logs:/logs
       - agent-vol:/agent
@@ -92,6 +175,11 @@ services:
       - REMOTE_HOSTS=jmeter-slave-0,jmeter-slave-1,jmeter-slave-2
       - TEST_DIR=prometheus
       - TEST_PLAN_FILE_NAME=simple_prometheus_example.jmx
+      - INSPECTIT_SERVICE_NAME=jmeter-master
+      - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
+      - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
+      - INSPECTIT_EXPORTERS_METRICS_INFLUX_URL=http://influxdb-server:8086
+      - INSPECTIT_EXPORTERS_TRACING_ZIPKIN_URL=http://zipkin-server:9411/api/v2/spans
     entrypoint: ["sh", "-c","
       ./dockerize -wait=tcp://jmeter-slave-0:60000 \
                   -wait=tcp://jmeter-slave-1:60000 \

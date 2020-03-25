@@ -43,14 +43,6 @@ IP_ADD=$(hostname -i)
 echo "--> master - Starting the JMeter Engine at this time \"$JMETER_START_TIME\" with this test plan:  \"${FULL_LOAD_TEST_DIR}/${TEST_PLAN_FILE_NAME}\""
 
 # Execute Jmeter
-#$JMETER_BIN/jmeter \
-#    -n -X \
-#    -Jserver.rmi.localport=${CLIENT_RMI_PORT} \
-#		-Jremote_hosts=${REMOTE_HOSTS} \
-#		-t "${FULL_LOAD_TEST_DIR}/${TEST_PLAN_FILE_NAME}" \
-#    -Jserver.rmi.ssl.disable=true \
-#		-j /logs/master_${LOG_TIMESTAMP}_${IP_ADD:9:3}.log
-
 $JMETER_BIN/jmeter \
     -n -X \
     -Jserver.rmi.localport=${CLIENT_RMI_PORT} \
