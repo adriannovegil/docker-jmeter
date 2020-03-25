@@ -69,6 +69,7 @@ $ docker-compose up
 
 ### InfluxDB
 
+  * https://github.com/msfidelis/jmeter-grafana-influxdb
   * https://github.com/NovatecConsulting/JMeter-InfluxDB-Writer
   * https://sfakrudeen78.github.io/JMeter-InfluxDB-Writer/
   * https://medium.com/@ellenhuang523/a-docker-solution-to-jmeter-influxdb-grafana-performance-testing-568848de7a0f

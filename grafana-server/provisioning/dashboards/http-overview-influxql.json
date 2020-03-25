@@ -42,7 +42,7 @@
     },
     {
       "columns": [],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fontSize": "100%",
       "gridPos": {
         "h": 5,
@@ -241,7 +241,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -375,7 +375,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "Incoming HTTP Requests per second for the selected endpoints and applications",
       "format": "none",
@@ -503,7 +503,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "The error rate of incoming http requests for the selected endpoints and applications",
       "format": "percentunit",
@@ -623,7 +623,7 @@
     },
     {
       "columns": [],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fontSize": "100%",
       "gridPos": {
         "h": 5,
@@ -841,7 +841,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -969,7 +969,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "Outgoing HTTP Requests per second issued towards the selected endpoints from the given application",
       "format": "none",
@@ -1097,7 +1097,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "The error rate of outgoing http requests issued towards the selected endpoints of the selected application",
       "format": "percentunit",
@@ -1240,7 +1240,7 @@
     },
     {
       "columns": [],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fontSize": "100%",
       "gridPos": {
         "h": 5,
@@ -1442,7 +1442,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -1579,7 +1579,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "Incoming HTTP Requests per second for the selected endpoints and applications",
       "format": "none",
@@ -1710,7 +1710,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "The error rate of incoming http requests for the selected endpoints and applications",
       "format": "percentunit",
@@ -1833,7 +1833,7 @@
     },
     {
       "columns": [],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fontSize": "100%",
       "gridPos": {
         "h": 5,
@@ -2054,7 +2054,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "description": "",
       "fill": 1,
       "gridPos": {
@@ -2185,7 +2185,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "Outgoing HTTP Requests per second issued towards the selected endpoints from the given application",
       "format": "none",
@@ -2316,7 +2316,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "decimals": 2,
       "description": "The error rate of outgoing http requests issued towards the selected endpoints of the selected application",
       "format": "percentunit",
@@ -2452,7 +2452,7 @@
             "$__all"
           ]
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH key = \"service\"",
         "hide": 0,
         "includeAll": true,
@@ -2477,7 +2477,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH key = application",
         "hide": 0,
         "includeAll": true,
@@ -2502,7 +2502,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH key = \"http_path\"",
         "hide": 0,
         "includeAll": true,

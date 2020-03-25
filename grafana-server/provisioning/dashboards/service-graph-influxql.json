@@ -35,7 +35,7 @@
         "targetComponentPrefix": "target_",
         "type": "protocol"
       },
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "gridPos": {
         "h": 20,
         "w": 22,
@@ -269,7 +269,7 @@
             "$__all"
           ]
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH KEY=\"service\"",
         "hide": 0,
         "includeAll": true,
@@ -295,7 +295,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH KEY = \"application\"",
         "hide": 0,
         "includeAll": true,

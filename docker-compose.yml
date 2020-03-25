@@ -35,6 +35,9 @@ services:
       - INFLUXDB_HTTP_FLUX_ENABLED=true
       - INFLUXDB_HTTP_LOG_ENABLED=false
       - INFLUXDB_DATA_QUERY_LOG_ENABLED=false
+      - INFLUXDB_USER=user
+      - INFLUXDB_USER_PASSWORD=user
+      - INFLUXDB_ADMIN_PASSWORD=admin
     volumes:
       - ./influxdb-server:/docker-entrypoint-initdb.d
     networks:

@@ -48,7 +48,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -232,7 +232,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -491,7 +491,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -726,7 +726,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1008,7 +1008,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -1118,7 +1118,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -1227,7 +1227,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -1481,7 +1481,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -1620,7 +1620,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -1813,7 +1813,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -1969,7 +1969,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -2156,7 +2156,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -2418,7 +2418,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -2656,7 +2656,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -2941,7 +2941,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -3054,7 +3054,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -3166,7 +3166,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -3423,7 +3423,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -3565,7 +3565,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -3761,7 +3761,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -3923,7 +3923,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -4110,7 +4110,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -4372,7 +4372,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -4610,7 +4610,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -4895,7 +4895,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -5008,7 +5008,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -5120,7 +5120,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -5377,7 +5377,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -5519,7 +5519,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -5715,7 +5715,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -5877,7 +5877,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -6064,7 +6064,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -6326,7 +6326,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -6564,7 +6564,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -6849,7 +6849,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -6962,7 +6962,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -7074,7 +7074,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -7331,7 +7331,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -7473,7 +7473,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -7669,7 +7669,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -7831,7 +7831,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -8018,7 +8018,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -8280,7 +8280,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -8518,7 +8518,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -8803,7 +8803,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -8916,7 +8916,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -9028,7 +9028,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -9285,7 +9285,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -9427,7 +9427,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -9623,7 +9623,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -9785,7 +9785,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 2,
       "gridPos": {
         "h": 6,
@@ -9972,7 +9972,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -10234,7 +10234,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -10472,7 +10472,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -10757,7 +10757,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -10870,7 +10870,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -10982,7 +10982,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 10,
       "gridPos": {
         "h": 6,
@@ -11239,7 +11239,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 4,
       "gridPos": {
         "h": 6,
@@ -11381,7 +11381,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "fill": 1,
       "gridPos": {
         "h": 6,
@@ -11577,7 +11577,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "LocalInflux",
+      "datasource": "LocalInspect",
       "format": "none",
       "gauge": {
         "maxValue": 1,
@@ -11723,7 +11723,7 @@
             "$__all"
           ]
         },
-        "datasource": "LocalInflux",
+        "datasource": "LocalInspect",
         "definition": "SHOW TAG VALUES WITH KEY=\"service\"",
         "hide": 0,
         "includeAll": true,
