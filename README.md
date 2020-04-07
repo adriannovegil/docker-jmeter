@@ -2,7 +2,7 @@
 
 Project for test JMeter over Docker using a Master-Slave architecture
 
-## How to run
+## Fast run
 
 Biuld the base image
 
@@ -10,7 +10,7 @@ Biuld the base image
 $ cd jmeter-base
 $ docker build -t jmeter-cluster/jmeter-base .
 ```
-Then, build the rest of the image using `docker-compose`:
+Then, build the rest of the image using the `docker-compose` command in the root foler of the project:
 
 ```shell
 $ docker-compose build
@@ -21,17 +21,39 @@ Now you can launch the JMeter cluster executing the following command:
 ```shell
 $ docker-compose up
 ```
-## Experiment Definition
+## Configuration
 
-  - JMETER_RUN_ID
-  - JMETER_RUN_NAME
+You can configure different kind of parameter in the master and slave nodes. Following you can see a table with the configuration options:
 
-  - JMETER_TEST_PLAN_FILE_NAME
-  - JMETER_TEST_PLAN_URL
+### Master Node
 
-  - JMETER_RAMPUP
-  - JMETER_THREADS
-  - JMETER_DURATION
+JMeter Master configuration
+
+ * `JMETER_CLIENT_RMI_PORT`
+ * `JMETER_CLIENT_ENGINE_PORT`
+ * `JMETER_REMOTE_HOSTS`
+
+Experiment configuration
+
+ * `EXP_RUN_ID`
+ * `EXP_START_TIME`
+ * `EXP_RUN_NAME`
+ * `EXP_TEST_PLAN_URL`
+ * `EXP_TEST_PLAN_DIR`
+ * `EXP_TEST_PLAN_FILE_NAME`
+
+
+
+ * `JMETER_RAMPUP`
+ * `JMETER_THREADS`
+ * `JMETER_DURATION`
+
+### Slave Nodes
+
+Slaves configuration
+
+ * `JMETER_SERVER_RMI_PORT`
+ * `JMETER_CLIENT_RMI_PORT`
 
 ## References
 
@@ -60,6 +82,8 @@ $ docker-compose up
 
 ### Openshift
 
+ * https://github.com/kubernauts/jmeter-kubernetes
+ * https://blog.kubernauts.io/load-testing-as-a-service-with-jmeter-on-kubernetes-fc5288bb0c8b
  * https://github.com/matth4260/JMeterProject/tree/9a2d83ff371ec857e73726b1fa9cd02b6306c7b2
  * https://github.com/eleanordare/jmeter-openshift-jenkins
 

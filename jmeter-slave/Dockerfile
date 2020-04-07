@@ -3,18 +3,14 @@ FROM jmeter-cluster/jmeter-base
 
 USER root
 
+# Configure JMeter installation
 ENV JMETER_BIN $JMETER_HOME/bin
-
-#ENV SERVER_HOST_NAME 127.0.0.1
-#ENV CLIENT_RMI_PORT 1099
-ENV SERVER_RMI_PORT 7000
-
-#ADD jmeter.properties /var/lib/apache-jmeter/bin/
+ENV JMETER_SERVER_RMI_PORT 7000
+ENV JMETER_CLIENT_RMI_PORT 60000
 
 # Expose access to logs
 VOLUME [ "/logs" ]
 
-#EXPOSE $SERVER_RMI_PORT
 EXPOSE $CLIENT_ENGINE_PORT
 
 # Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
@@ -26,9 +22,6 @@ RUN sed -i 's|-jar|-javaagent:/agent/inspectit-ocelot-agent.jar -jar|g' $JMETER_
 # Copy entrypoint script
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
-
-#1001 is an arbitrary choice
-#USER 1001
 
 # Run jmeter node
 ENTRYPOINT ["/docker-entrypoint.sh"]

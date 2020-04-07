@@ -66,6 +66,7 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=demo
       - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel,grafana-piechart-panel
     volumes:
       - ./grafana-server/provisioning:/usr/share/grafana/custom/
     depends_on:
@@ -93,8 +94,10 @@ services:
     image: jmeter-cluster/jmeter-slave
     container_name: jmeter-slave-0
     environment:
-      - SERVER_RMI_PORT=7000
-      - CLIENT_RMI_PORT=60000
+      # JMeter server configuration
+      - JMETER_SERVER_RMI_PORT=7000
+      - JMETER_CLIENT_RMI_PORT=60000
+      # Inspect IT agent configuration
       - INSPECTIT_SERVICE_NAME=jmeter-slave-0
       - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
       - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
@@ -119,8 +122,10 @@ services:
     image: jmeter-cluster/jmeter-slave
     container_name: jmeter-slave-1
     environment:
-      - SERVER_RMI_PORT=7000
-      - CLIENT_RMI_PORT=60000
+      # JMeter server configuration
+      - JMETER_SERVER_RMI_PORT=7000
+      - JMETER_CLIENT_RMI_PORT=60000
+      # Inspect IT agent configuration
       - INSPECTIT_SERVICE_NAME=jmeter-slave-1
       - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
       - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
@@ -145,8 +150,10 @@ services:
     image: jmeter-cluster/jmeter-slave
     container_name: jmeter-slave-2
     environment:
-      - SERVER_RMI_PORT=7000
-      - CLIENT_RMI_PORT=60000
+      # JMeter server configuration
+      - JMETER_SERVER_RMI_PORT=7000
+      - JMETER_CLIENT_RMI_PORT=60000
+      # Inspect IT agent configuration
       - INSPECTIT_SERVICE_NAME=jmeter-slave-2
       - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
       - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false
@@ -173,11 +180,18 @@ services:
     image: jmeter-cluster/jmeter-master
     container_name: jmeter-master
     environment:
-      - CLIENT_RMI_PORT=60000
-      - CLIENT_ENGINE_PORT=4445
-      - REMOTE_HOSTS=jmeter-slave-0,jmeter-slave-1,jmeter-slave-2
-      - TEST_DIR=prometheus
-      - TEST_PLAN_FILE_NAME=simple_prometheus_example.jmx
+      # JMeter server configuration
+      - JMETER_CLIENT_RMI_PORT=60000
+      - JMETER_CLIENT_ENGINE_PORT=4445
+      - JMETER_REMOTE_HOSTS=jmeter-slave-0,jmeter-slave-1,jmeter-slave-2
+      # Experiment configuration
+      - EXP_RUN_ID=dummy-id
+      - EXP_RUN_NAME=dummy-name
+      - EXP_START_TIME=2000-01-01T12:00:11Z
+      - EXP_TEST_PLAN_URL=https://github.com/adriannovegil/jmeter-dummy-test-plan
+      - EXP_TEST_PLAN_DIR=prometheus
+      - EXP_TEST_PLAN_FILE_NAME=simple_prometheus_example.jmx
+      # Inspect IT agent configuration
       - INSPECTIT_SERVICE_NAME=jmeter-master
       - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration
       - INSPECTIT_EXPORTERS_METRICS_PROMETHEUS_ENABLED=false

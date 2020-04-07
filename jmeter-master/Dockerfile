@@ -3,24 +3,23 @@ FROM jmeter-cluster/jmeter-base
 
 USER root
 
+# Install usefull dependencies
+RUN yum --quiet install -y git; yum clean all
+
+# Base test dir
+ENV ROOT_LOAD_DIR=load_tests
+
+# Configure JMeter installation
 ENV JMETER_BIN $JMETER_HOME/bin
-
-ENV TEST_DIR default
-ENV TEST_PLAN_FILE_NAME test-plan.jmx
-ENV CLIENT_ENGINE_PORT 4445
-ENV REMOTE_HOSTS 127.0.0.1
-
-# Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
-#ADD jmeter.properties /var/lib/apache-jmeter/bin/
+ENV JMETER_CLIENT_RMI_PORT=60000
+ENV JMETER_CLIENT_ENGINE_PORT 4445
+ENV JMETER_REMOTE_HOSTS 127.0.0.1
 
 # Create mount point for script and log files
 VOLUME ["/logs"]
 
-EXPOSE $CLIENT_RMI_PORT
-EXPOSE $CLIENT_ENGINE_PORT
-
-# Copy load_tests folder
-COPY load_tests /load_tests
+EXPOSE $JMETER_CLIENT_RMI_PORT
+EXPOSE $JMETER_CLIENT_ENGINE_PORT
 
 # Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
 ADD jmeter.properties $JMETER_BIN/
@@ -31,9 +30,6 @@ RUN sed -i 's|-jar|-javaagent:/agent/inspectit-ocelot-agent.jar -jar|g' $JMETER_
 # Copy entrypoint script
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
-
-#1001 is an arbitrary choice
-#USER 1001
 
 # Run jmeter master
 ENTRYPOINT ["/docker-entrypoint.sh"]
