@@ -188,9 +188,8 @@ services:
       - EXP_RUN_ID=dummy-id
       - EXP_RUN_NAME=dummy-name
       - EXP_START_TIME=2000-01-01T12:00:11Z
-      - EXP_TEST_PLAN_URL=https://github.com/adriannovegil/jmeter-dummy-test-plan
-      - EXP_TEST_PLAN_DIR=prometheus
-      - EXP_TEST_PLAN_FILE_NAME=simple_prometheus_example.jmx
+      - EXP_TEST_PLAN_DIR=default
+      - EXP_TEST_PLAN_FILE_NAME=test-plan.jmx
       # Inspect IT agent configuration
       - INSPECTIT_SERVICE_NAME=jmeter-master
       - INSPECTIT_CONFIG_HTTP_URL=http://ocelot-config-server:8090/api/v1/agent/configuration

@@ -21,6 +21,8 @@ VOLUME ["/logs"]
 EXPOSE $JMETER_CLIENT_RMI_PORT
 EXPOSE $JMETER_CLIENT_ENGINE_PORT
 
+COPY load_tests /load_tests
+
 # Use a predefined configuration.  This sets the contract for connecting to jmeter servers.
 ADD jmeter.properties $JMETER_BIN/
 
